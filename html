@@ -1,18 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Todo List App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8-Bit Web Page</title>
+    <style>
+        /* Your 8-bit styling here */
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Press Start 2P', sans-serif;
+        }
+        /* Other styles for your elements */
+
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Todo List</h1>
-    <input type="text" id="taskInput" placeholder="Add a new task">
-    <button onclick="addTask()">Add Task</button>
-    <ul id="taskList"></ul>
-  </div>
-  <script src="script.js"></script>
+    <h1>Welcome to My 8-Bit Web Page!</h1>
+    <input type="text" id="userInput" placeholder="Type something...">
+    <div id="alertBox"></div>
+
+    <script>
+        const userInput = document.getElementById('userInput');
+        const alertBox = document.getElementById('alertBox');
+
+        userInput.addEventListener('input', () => {
+            const inputText = userInput.value;
+            // Example: Show an alert when input reaches 10 characters
+            if (inputText.length >= 10) {
+                alertBox.textContent = '10% left!';
+            } else {
+                alertBox.textContent = '';
+            }
+        });
+    </script>
 </body>
 </html>
